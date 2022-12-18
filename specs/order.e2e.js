@@ -1,4 +1,5 @@
 import { getFieldValueById } from "../pages/functions.js"
+import OrderPage from '../pages/order.page.js'
 import {
     ICO,
     clientName,
@@ -14,8 +15,7 @@ import {
 
 describe('Objednávka pro MŠ/ZŠ', () => {
     beforeEach(() => {
-        browser.reloadSession();
-        browser.url('/objednavka/pridat')
+        OrderPage.open()
     })
 
     it('fill valid credentials', () => {
