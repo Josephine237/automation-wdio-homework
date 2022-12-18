@@ -13,10 +13,12 @@ import {
 } from './fixtures.js'
 
 describe('Objednávka pro MŠ/ZŠ', () => {
-
-    it.only('fill valid credentials', () => {
+    beforeEach(() => {
         browser.reloadSession();
-        browser.url('/objednavka/pridat');
+        browser.url('/objednavka/pridat')
+    })
+
+    it('fill valid credentials', () => {
    
         $('#ico').setValue(ICO)
         browser.keys('Enter')
@@ -44,11 +46,12 @@ describe('Objednávka pro MŠ/ZŠ', () => {
     })
 
     it('fill invalid credentials', () => {
-        browser.reloadSession();
-        browser.url('/objednavka/pridat');
    
         $('#ico').setValue(wrongICO)
         browser.keys('Enter')
+
+        const errorMessage = $('.toast-message').getText()
+        expect(errorMessage).toContain('IČO nenalezeno')
        
     })
 
