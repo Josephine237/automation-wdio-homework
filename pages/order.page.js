@@ -19,6 +19,7 @@ class OrderPage {
     get adults() { return $('#camp-adults') }
     get saveOrderButton() { return $('[name="camp"]') }
     get successOrder() {return $('.cart-body') } 
+    get successMessage() { return $('.card-body')}
 
 
     open() {
@@ -48,6 +49,10 @@ class OrderPage {
 
     saveOrder() {
         this.saveOrderButton.click()
+    }
+
+    getSuccessMessage() {
+        return this.successMessage.getText()
     }
 }
 

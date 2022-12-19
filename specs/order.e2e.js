@@ -19,7 +19,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         OrderPage.open()
     })
 
-    it.only('fill valid credentials', () => {
+    it('fill valid credentials', () => {
    
         $('#ico').setValue(ICO)
         browser.keys('Enter')
@@ -34,8 +34,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
 
  
         browser.pause(5000)
-        const successOrder = $('.card-body').getText()
-        expect(successOrder).toContain('Objednávka byla úspěšně uložena')
+        expect(OrderPage.getSuccessMessage()).toContain('Objednávka byla úspěšně uložena')
 
     })
 
