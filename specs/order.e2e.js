@@ -19,13 +19,10 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         OrderPage.open()
     })
 
-    it('fill valid credentials', () => {
+    it.only('fill valid credentials', () => {
    
         OrderPage.ico(ICO)
-
-        browser.keys('Enter')
-        const aresData = $('.toast-message').getText()
-        expect(aresData).toContain('Data z ARESu úspěšně načtena')
+        expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
 

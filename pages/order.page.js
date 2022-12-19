@@ -7,6 +7,8 @@ class OrderPage {
     }
 
     get icoField() { return $('#ico'); }
+    get aresData() { return $('.toast-message') }
+
     get substituteNameField() { return $('#substitute') }
     get contactNameField() { return $('#contact_name') }
     get contactTelField() { return $('#contact_tel') }
@@ -31,6 +33,11 @@ class OrderPage {
 
     ico() {
         this.icoField.setValue(ICO)
+        browser.keys('Enter')
+    }
+
+    getAresData() {
+        return this.aresData.getText()
     }
 
     fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate) {
@@ -60,6 +67,7 @@ class OrderPage {
     getSuccessMessage() {
         return this.successMessage.getText()
     }
+
 }
 
 module.exports = new OrderPage();
