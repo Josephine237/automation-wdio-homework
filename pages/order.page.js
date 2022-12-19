@@ -25,6 +25,7 @@ class OrderPage {
     get successOrder() {return $('.cart-body') } 
     get successMessage() { return $('.card-body') }
     get errorMessage() { return $('.toast-title') }
+    get fieldError() { return $('.invalid-feedback'); }
 
 
     open() {
@@ -76,6 +77,10 @@ class OrderPage {
 
     getErrorMessage() {
         return this.errorMessage.getText()
+    }
+
+    getFieldError() {
+        return this.fieldError.getText();
     }
 
 }

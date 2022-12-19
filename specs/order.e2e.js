@@ -43,20 +43,19 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         expect(OrderPage.getAresData()).toContain('IČO nenalezeno')
     })
 
-    it.only('fill invalid credential', () => {
+    it('fill invalid credential', () => {
    
         OrderPage.ico(ICO)
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, wrongPhone, contactEmail, startDate, endDate)
-        browser.pause(5000)
 
         OrderPage.clickOnCampOrderPart()
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
-        browser.pause(5000)
 
         expect(OrderPage.getErrorMessage()).toContain('Špatně zadané pole')
+        expect(OrderPage.getFieldError()).toEqual('Telefon není ve správném formátu')
     })
 
 });
