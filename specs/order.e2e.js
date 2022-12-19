@@ -1,4 +1,5 @@
 import { getFieldValueById } from "../pages/functions.js"
+import orderPage from "../pages/order.page.js";
 import OrderPage from '../pages/order.page.js'
 import {
     ICO,
@@ -25,12 +26,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         const aresData = $('.toast-message').getText()
         expect(aresData).toContain('Data z ARESu úspěšně načtena')
 
-        $('#substitute').setValue(substituteName)
-        $('#contact_name').setValue(contactName)
-        $('#contact_tel').setValue(contactPhone)
-        $('#contact_mail').setValue(contactEmail)
-        $('#start_date_1').setValue(startDate)
-        $('#end_date_1').setValue(endDate)
+        OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
 
         $('#nav-home-tab').click()
         $('#camp-date_part').selectByIndex(1)
