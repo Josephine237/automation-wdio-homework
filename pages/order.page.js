@@ -1,4 +1,4 @@
-const { ICO } = require("../specs/fixtures");
+const { ICO, wrongICO } = require("../specs/fixtures");
 
 class OrderPage {
 
@@ -33,6 +33,11 @@ class OrderPage {
 
     ico() {
         this.icoField.setValue(ICO)
+        browser.keys('Enter')
+    }
+
+    wrongIco() {
+        this.icoField.setValue(wrongICO)
         browser.keys('Enter')
     }
 

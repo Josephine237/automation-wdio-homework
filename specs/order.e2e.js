@@ -19,7 +19,7 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         OrderPage.open()
     })
 
-    it.only('fill valid credentials', () => {
+    it('fill valid credentials', () => {
    
         OrderPage.ico(ICO)
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
@@ -35,14 +35,11 @@ describe('Objednávka pro MŠ/ZŠ', () => {
 
     })
 
-    it('fill invalid credentials', () => {
+    it.only('fill invalid credentials', () => {
    
-        $('#ico').setValue(wrongICO)
-        browser.keys('Enter')
-
-        const errorMessage = $('.toast-message').getText()
-        expect(errorMessage).toContain('IČO nenalezeno')
-       
+        OrderPage.wrongIco(wrongICO)
+        browser.pause(5000)
+        expect(OrderPage.getAresData()).toContain('IČO nenalezeno')
     })
 
 });
