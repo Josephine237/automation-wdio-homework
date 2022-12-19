@@ -12,6 +12,14 @@ class OrderPage {
     get startDateField() { return $('#start_date_1') }
     get endDateField() {return $('#end_date_1')}
 
+    get serviceOrderedButton() { return $('#nav-home-tab') }
+    get datePartField() { return $('#camp-date_part') }
+    get students() { return $('#camp-students') }
+    get age() { return $('#camp-age') }
+    get adults() { return $('#camp-adults') }
+    get saveOrderButton() { return $('[name="camp"]') }
+    get successOrder() {return $('.cart-body') } 
+
 
     open() {
         browser.reloadSession();
@@ -25,6 +33,21 @@ class OrderPage {
         this.contactMailField.setValue(contactEmail)
         this.startDateField.setValue(startDate)
         this.endDateField.setValue(endDate)
+    }
+
+    clickOnCampOrderPart() {
+        this.serviceOrderedButton.click()
+    }
+
+    fillCampOrderPart() {
+        this.datePartField.selectByIndex(1)
+        this.students.setValue(3)
+        this.age.setValue(13)
+        this.adults.setValue(1)
+    }
+
+    saveOrder() {
+        this.saveOrderButton.click()
     }
 }
 
