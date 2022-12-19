@@ -21,7 +21,8 @@ describe('Objednávka pro MŠ/ZŠ', () => {
 
     it('fill valid credentials', () => {
    
-        $('#ico').setValue(ICO)
+        OrderPage.ico(ICO)
+
         browser.keys('Enter')
         const aresData = $('.toast-message').getText()
         expect(aresData).toContain('Data z ARESu úspěšně načtena')
@@ -32,7 +33,6 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
 
- 
         browser.pause(5000)
         expect(OrderPage.getSuccessMessage()).toContain('Objednávka byla úspěšně uložena')
 

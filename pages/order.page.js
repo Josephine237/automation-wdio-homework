@@ -1,3 +1,5 @@
+const { ICO } = require("../specs/fixtures");
+
 class OrderPage {
 
     constructor() {
@@ -25,6 +27,10 @@ class OrderPage {
     open() {
         browser.reloadSession();
         browser.url(this.url);
+    }
+
+    ico() {
+        this.icoField.setValue(ICO)
     }
 
     fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate) {
