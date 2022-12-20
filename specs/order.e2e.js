@@ -1,5 +1,4 @@
 import { getFieldValueById } from "../pages/functions.js"
-import orderPage, { datePart, ico, serviceOrdered } from "../pages/order.page.js";
 import OrderPage from '../pages/order.page.js'
 import {
     ICO,
@@ -12,10 +11,10 @@ import {
     startDate,
     endDate,
     wrongICO,
-    wrongPhone
+    wrongPhone,
 } from './fixtures.js'
 
-describe('Objednávka pro MŠ/ZŠ', () => {
+describe('Objednávka pro tábor MŠ/ZŠ', () => {
     beforeEach(() => {
         OrderPage.open()
     })
@@ -54,8 +53,37 @@ describe('Objednávka pro MŠ/ZŠ', () => {
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
 
+        // zde fungují obě assertace
         expect(OrderPage.getErrorMessage()).toContain('Špatně zadané pole')
         expect(OrderPage.getFieldError()).toEqual('Telefon není ve správném formátu')
     })
+
+});
+
+describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
+    beforeEach(() => {
+        browser.reloadSession();
+        browser.url('/');
+    })
+
+    it.only('fill valid credentials', () => {
+
+        OrderPage.clickOnForTeachers()
+        OrderPage.selectOrderMS()
+
+        OrderPage.ico(ICO)
+        expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
+
+        OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
+
+        OrderPage.clickOnSchoolOrderPart()
+        OrderPage.clickfillSchoolOrderPart()
+
+        OrderPage.saveSchoolCampOrder()
+        expect(OrderPage.getSuccessMessage()).toContain('Objednávka byla úspěšně uložena')
+
+    })
+
+
 
 });
