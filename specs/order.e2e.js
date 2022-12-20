@@ -66,7 +66,7 @@ describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
         browser.url('/');
     })
 
-    it.only('fill valid credentials', () => {
+    it('fill valid credentials', () => {
 
         OrderPage.clickOnForTeachers()
         OrderPage.selectOrderMS()
