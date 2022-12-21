@@ -13,6 +13,7 @@ class OrderPage {
     get contactTelField() { return $('#contact_tel') }
     get contactMailField() { return $('#contact_mail') }
     get startDateField() { return $('#start_date_1') }
+    get startDateFieldLabel() { return $('label[for="start_date_1"]') }
     get endDateField() {return $('#end_date_1')}
 
     // táborové selektory

@@ -20,12 +20,13 @@ describe('Objednávka pro tábor MŠ/ZŠ', () => {
         expect(browser).toHaveTitle("Nová objednávka - Czechitas")
     })
 
-    it('fill valid credentials', () => {
+    it.only('fill valid credentials', () => {
    
         OrderPage.ico(ICO)
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
+        expect(OrderPage.startDateFieldLabel).toHaveText('Upřednostňovaný termín 1')
         OrderPage.clickOnCampOrderPart()
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
