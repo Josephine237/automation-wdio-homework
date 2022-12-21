@@ -3,7 +3,7 @@ const { ICO, wrongICO } = require("../specs/fixtures");
 class OrderPage {
 
     constructor() {
-        this.url = '/objednavka/pridat';
+        this.url = '/';
     }
     // společné selektory
     get icoField() { return $('#ico'); }
@@ -47,9 +47,9 @@ class OrderPage {
     // našla bych i takto #nature-end_food [value="lunch"]
     get saveSchoolOrderButton() { return $('[name="school_nature"]') }
 
-    open() {
+    openAddOrderPage() {
         browser.reloadSession();
-        browser.url(this.url);
+        browser.url(this.url + 'objednavka/pridat');
     }
 
     ico() {
@@ -103,6 +103,11 @@ class OrderPage {
     }
 
     // druhý describe block
+    openMainPage() {
+        browser.reloadSession();
+        browser.url(this.url);
+    }
+
     clickOnForTeachers() {
         this.forTeachers.click()
     }

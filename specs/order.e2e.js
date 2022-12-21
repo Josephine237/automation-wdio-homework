@@ -16,7 +16,7 @@ import {
 
 describe('Objednávka pro tábor MŠ/ZŠ', () => {
     beforeEach(() => {
-        OrderPage.open()
+        OrderPage.openAddOrderPage()
     })
 
     it('fill valid credentials', () => {
@@ -25,7 +25,6 @@ describe('Objednávka pro tábor MŠ/ZŠ', () => {
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
-
         OrderPage.clickOnCampOrderPart()
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
@@ -48,7 +47,6 @@ describe('Objednávka pro tábor MŠ/ZŠ', () => {
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, wrongPhone, contactEmail, startDate, endDate)
-
         OrderPage.clickOnCampOrderPart()
         OrderPage.fillCampOrderPart()
         OrderPage.saveOrder()
@@ -62,11 +60,10 @@ describe('Objednávka pro tábor MŠ/ZŠ', () => {
 
 describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
     beforeEach(() => {
-        browser.reloadSession();
-        browser.url('/');
+        OrderPage.openMainPage()
     })
 
-    it.only('fill valid credentials', () => {
+    it('fill valid credentials', () => {
 
         OrderPage.clickOnForTeachers()
         OrderPage.selectOrderMS()
@@ -75,7 +72,6 @@ describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
 
         OrderPage.fillTheContactPart(substituteName, contactName, contactPhone, contactEmail, startDate, endDate)
-
         OrderPage.clickOnSchoolOrderPart()
         OrderPage.clickfillSchoolOrderPart()
 
