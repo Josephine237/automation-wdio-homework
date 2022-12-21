@@ -17,6 +17,7 @@ import {
 describe('Objednávka pro tábor MŠ/ZŠ', () => {
     beforeEach(() => {
         OrderPage.openAddOrderPage()
+        expect(browser).toHaveTitle("Nová objednávka - Czechitas")
     })
 
     it('fill valid credentials', () => {
