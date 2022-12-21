@@ -20,7 +20,7 @@ describe('Objednávka pro tábor MŠ/ZŠ', () => {
         expect(browser).toHaveTitle("Nová objednávka - Czechitas")
     })
 
-    it.only('fill valid credentials', () => {
+    it('fill valid credentials', () => {
    
         OrderPage.ico(ICO)
         expect(OrderPage.getAresData()).toContain('Data z ARESu úspěšně načtena')
