@@ -28,9 +28,12 @@ class OrderPage {
     get fieldError() { return $('.invalid-feedback'); }
 
     // selektory pro školu v přírodě
-    // get forTeachers() { return $('#navbarSupportedContent > div:nth-child(1) > div:nth-child(3) > a') }
-    get forTeachers() { return $('=Pro učitelé') }
-    // get orderMS() { return $('#navbarSupportedContent > div:nth-child(1) > div.nav-item.dropdown.show > div > a:nth-child(2)') }
+    get forTeachers() { return $('.navbar-nav').$$('.nav-link').find(nevim => {
+        return nevim.getText() === "Pro učitelé"
+        // navbar-nav - mě omezí jen na hledání v navbaru, pokud by tam těch selektorů bylo více
+        // find mi najde všechny s hodnotou pro učitele
+    }) }
+    //  nebo lze vyhledat takto  .$('=Pro učitelé') 
     get orderMS() { return $('=Objednávka pro MŠ/ZŠ') }
 
     get serviceOrderedSchoolButton() { return $('#nav-profile-tab') }
