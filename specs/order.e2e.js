@@ -84,6 +84,4 @@ describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
 
     })
 
-
-
 });

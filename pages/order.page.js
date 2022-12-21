@@ -28,8 +28,11 @@ class OrderPage {
     get fieldError() { return $('.invalid-feedback'); }
 
     // selektory pro školu v přírodě
-    get forTeachers() { return $('#navbarSupportedContent > div:nth-child(1) > div:nth-child(3) > a') }
-    get orderMS() { return $('#navbarSupportedContent > div:nth-child(1) > div.nav-item.dropdown.show > div > a:nth-child(2)') }
+    // get forTeachers() { return $('#navbarSupportedContent > div:nth-child(1) > div:nth-child(3) > a') }
+    get forTeachers() { return $('=Pro učitelé') }
+    // get orderMS() { return $('#navbarSupportedContent > div:nth-child(1) > div.nav-item.dropdown.show > div > a:nth-child(2)') }
+    get orderMS() { return $('=Objednávka pro MŠ/ZŠ') }
+
     get serviceOrderedSchoolButton() { return $('#nav-profile-tab') }
     get schoolStudents() { return $('#nature-students') }
     get schoolAge() { return $('#nature-age') }
