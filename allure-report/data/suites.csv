@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Dec 31 14:24:03 CET 2022","Sat Dec 31 14:24:24 CET 2022","20984","","Objednávka pro tábor MŠ/ZŠ","","Objednávka pro tábor MŠ/ZŠ","fill invalid ico","fill invalid ico",""
+"passed","Sat Dec 31 14:24:51 CET 2022","Sat Dec 31 14:25:17 CET 2022","25907","","Objednávka pro školu v přírodě MŠ/ZŠ","","Objednávka pro školu v přírodě MŠ/ZŠ","fill valid credentials","fill valid credentials",""
+"passed","Sat Dec 31 14:24:24 CET 2022","Sat Dec 31 14:24:51 CET 2022","27511","","Objednávka pro tábor MŠ/ZŠ","","Objednávka pro tábor MŠ/ZŠ","fill invalid credential","fill invalid credential",""
+"passed","Sat Dec 31 14:23:37 CET 2022","Sat Dec 31 14:24:03 CET 2022","26242","","Objednávka pro tábor MŠ/ZŠ","","Objednávka pro tábor MŠ/ZŠ","fill valid credentials","fill valid credentials",""

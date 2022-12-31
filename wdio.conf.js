@@ -1,3 +1,4 @@
+const allure = require('allure-commandline');
 exports.config = {
     specs: [
         './specs/**/*.js'
@@ -37,9 +38,35 @@ exports.config = {
         'selenium-standalone'
     ],
     framework: 'mocha',
-    reporters: ['spec'],
+    reporters: ['spec',
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
+    },
+
+    onComplete: function() {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
+
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
     }
 }
