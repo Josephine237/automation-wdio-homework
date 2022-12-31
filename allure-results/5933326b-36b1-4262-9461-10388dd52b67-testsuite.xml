@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1672502228178' stop='1672502268814'>
+    <name>Objednávka pro školu v přírodě MŠ/ZŠ</name>
+    <title>Objednávka pro školu v přírodě MŠ/ZŠ</title>
+    <test-cases>
+        <test-case start='1672502228178' status='passed' stop='1672502254704'>
+            <name>fill valid credentials</name>
+            <title>fill valid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1672502254705' status='broken' stop='1672502268813'>
+            <name>fill invalid credentials - mistake for better allure report</name>
+            <title>fill invalid credentials - mistake for better allure report</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Cannot read property 'click' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'click' of undefined
+                    at OrderPage.clickOnForTeacherMistake (/Users/josefinanovakova/Projekty/AutomatizaceCzechitas/automation-wdio-homework-fork/pages/order.page.js:121:33)
+                    at Context.&lt;anonymous> (/Users/josefinanovakova/Projekty/AutomatizaceCzechitas/automation-wdio-homework-fork/specs/order.e2e.js:87:19)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -82,4 +82,11 @@ describe('Objednávka pro školu v přírodě MŠ/ZŠ', () => {
 
     })
 
+    it('fill invalid credentials - mistake for better allure report', () => {
+
+        OrderPage.clickOnForTeacherMistake()
+        OrderPage.selectOrderMS()
+
+    })
+
 });

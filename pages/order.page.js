@@ -37,6 +37,10 @@ class OrderPage {
     //  nebo lze vyhledat takto  .$('=Pro učitelé') 
     get orderMS() { return $('=Objednávka pro MŠ/ZŠ') }
 
+    get forTeachersMistake() { return $('.navbar-nav').$$('.nav-link').find(nevim => {
+        return nevim.getText() === "Pro ucitele"
+    }) }
+
     get serviceOrderedSchoolButton() { return $('#nav-profile-tab') }
     get schoolStudents() { return $('#nature-students') }
     get schoolAge() { return $('#nature-age') }
@@ -111,6 +115,10 @@ class OrderPage {
 
     clickOnForTeachers() {
         this.forTeachers.click()
+    }
+
+    clickOnForTeacherMistake() {
+        this.forTeachersMistake.click()
     }
 
     selectOrderMS() {
